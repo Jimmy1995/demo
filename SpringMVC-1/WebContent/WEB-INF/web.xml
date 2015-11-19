@@ -5,6 +5,16 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- 配置org.springframework.web.filter.HiddenHttpMethodFilter： 可以把POST请求转为 delete或put 请求 -->
+  <filter>
+  	<filter-name>HiddenHttpMethodFilter</filter-name>
+  	<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>HiddenHttpMethodFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
   <servlet>
   	<servlet-name>dispatcherServlet</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
